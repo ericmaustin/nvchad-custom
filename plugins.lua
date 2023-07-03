@@ -78,6 +78,7 @@ local plugins = {
     end
   },
   require "custom.configs.neo-tree",
-  require "custom.configs.symbols-outline"
+  require "custom.configs.symbols-outline",
+  require "custom.configs.diffview",
 }
 return plugins
