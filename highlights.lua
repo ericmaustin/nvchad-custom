@@ -12,6 +12,9 @@ M.override = {
   Keyword = {
     italic = true,
   },
+  keyword = {
+    italic = true,
+  }
 }
 
 ---@type HLTable

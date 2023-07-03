@@ -1,7 +1,7 @@
 local plugins = {
   {
     -- copilot
-    {"github/copilot.vim", lazy = false},
+    { "github/copilot.vim", lazy = false },
 
     -- DEBUGGERS
     -- debugger adapter
@@ -14,42 +14,52 @@ local plugins = {
       "mfussenegger/nvim-dap-python",
       config = function()
         require "mfussenegger/nvim-dap"
-      end
+      end,
     },
 
-    -- go debugger 
+    -- go debugger
     -- https://github.com/leoluz/nvim-dap-go
     {
       "leoluz/nvim-dap-go",
-      config = function ()
+      config = function()
         require "mfussenegger/nvim-dap"
-      end
+      end,
     },
 
     -- rust tools & debuggers
     -- https://github.com/simrat39/rust-tools.nvim
     {
       "simrat39/rust-tools.nvim",
-      config = function ()
+      config = function()
         require "mfussenegger/nvim-dap"
-      end
+      end,
     },
 
     -- telescope extension fo dap
     -- https://github.com/nvim-telescope/telescope-dap.nvim
     {
       "nvim-telescope/telescope-dap.nvim",
-      config = function ()
-        require('telescope').load_extension('dap')
-      end
+      config = function()
+        require("telescope").load_extension "dap"
+      end,
     },
 
     -- treesitter
     {
       "nvim-treesitter/nvim-treesitter",
       opts = {
-        ensure_installed = {"html", "css", "bash", "go", "python", "css",
-          "typescript", "javascript", "rust", "lua"},
+        ensure_installed = {
+          "html",
+          "css",
+          "bash",
+          "go",
+          "python",
+          "css",
+          "typescript",
+          "javascript",
+          "rust",
+          "lua",
+        },
       },
     },
 
@@ -66,15 +76,37 @@ local plugins = {
         require "plugins.configs.lspconfig"
         require "custom.configs.lspconfig"
       end,
-    }
+    },
   },
 
   -- hop Anywhere
   {
     "phaazon/hop.nvim",
     lazy = false,
-    config = function ()
+    config = function()
       require("hop").setup()
+    end,
+  },
+  -- indent-blanklins
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup {
+        space_char_blankline = " ",
+        show_current_context = true,
+        -- show_current_context_start = true,
+      }
+    end,
+  },
+
+  -- vertcolumn
+  {
+    "lukas-reineke/virt-column.nvim",
+    lazy = false,
+    config = function()
+      require("virt-column").setup({
+        char="︲",
+      })
     end
   },
   require "custom.configs.neo-tree",
