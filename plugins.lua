@@ -76,6 +76,8 @@ local plugins = {
     config = function ()
       require("hop").setup()
     end
-  }
+  },
+  require "custom.configs.neo-tree",
+  require "custom.configs.symbols-outline"
 }
 return plugins

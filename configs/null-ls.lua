@@ -6,7 +6,7 @@ local code = null_ls.builtins.code_actions
 local comp = null_ls.builtins.completion
 
 local sources = {
-  comp.spell,
+  -- comp.spell,
   code.gitsigns,
   frmt.deno_fmt,
   frmt.gofumpt,
@@ -17,9 +17,9 @@ local sources = {
   frmt.stylua,
   lint.golangci_lint,
   lint.shellcheck,
-  -- frmt.prettierd.with {
-    -- filetypes = { "html", "yaml", "javascript", "typescript"},
-  -- }
+  frmt.prettierd.with {
+    filetypes = { "html", "yaml", "javascript", "typescript"},
+  }
 }
 
 null_ls.setup {
