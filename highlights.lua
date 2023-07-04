@@ -9,10 +9,10 @@ M.override = {
   Comment = {
     italic = true,
   },
-  Keyword = {
+  ["@keyword"] = {
     italic = true,
   },
-  keyword = {
+  ["@keyword.return"] = {
     italic = true,
   }
 }
